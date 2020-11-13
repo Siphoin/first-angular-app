@@ -1,0 +1,30 @@
+
+<div class="card">
+  <h2 [ngStyle]="{
+    color: card.title.length < 5 ? 'black' : 'green'
+  }">{{index}}. {{card.title}}</h2>
+  <p class="text"
+  [class.red]="textColor==='red'"
+  [class.black]="textColor==='black'">{{card.text}}</p>
+  <p>{{number}}</p>
+  <p>{{getinfo()}}</p>
+  <div>
+    <img [src]="imageUrl" alt="">
+    <br>
+    <div class="buttons">
+     <button (click)="textColor='red'">Set Red</button>
+     <button (click)="textColor='black'">Set Black</button>
+      </div>
+    <div class="buttons">
+    <button (click)="changeTitle()">Enable</button>
+    <button (click)="card.title='555'">Change 2</button>
+    </div>
+
+    <div>
+      <strong>{{cardDate | date}}</strong>
+    </div>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]='card.title'>
+  </div>
+</div>
